@@ -75,7 +75,7 @@ body {
     position: sticky; /* Sticky header */
     top: 0;
     z-index: 1000;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, padding 0.3s ease; /* Tambah padding transition */
 }
 
 /* Untuk header yang mengecil/berubah saat scroll (membutuhkan JS) */
@@ -386,7 +386,8 @@ body {
     height: 100%;
     display: flex;
     align-items: center;
-    animation: tickerAnimation 15s linear infinite; /* Animasi bergeser */
+    /* Animasi JS akan mengelola ini agar bergantian. Hapus ini jika menggunakan CSS-only marquee */
+    /* animation: tickerAnimation 15s linear infinite; */
     opacity: 0;
     transform: translateX(100%);
 }
@@ -396,18 +397,6 @@ body {
     opacity: 1;
     transform: translateX(0);
 }
-
-/* Kalo mau pakai CSS only marquee (kurang fleksibel) */
-/* .ticker-item {
-    display: inline-block;
-    padding-left: 100%;
-    animation: marquee 15s linear infinite;
-}
-
-@keyframes marquee {
-    0%   { transform: translateX(100%); }
-    100% { transform: translateX(-100%); }
-} */
 
 
 /* --- About Us Section --- */
@@ -934,10 +923,43 @@ textarea {
 
 
 /* --- Responsive Design --- */
+
+/* Untuk desktop (lebar lebih besar dari 992px) */
+/* Aturan dasar sudah untuk desktop, jadi tidak banyak perubahan di sini */
+
+/* Untuk Layar yang Lebih Kecil dari 992px (Tablet ke Bawah) */
 @media (max-width: 992px) {
     .container {
-        width: 92%;
+        width: 92%; /* Sedikit lebih lebar untuk layar yang lebih kecil */
+        padding: 0 10px; /* Kurangi padding samping */
     }
+
+    .section-spacing {
+        padding: 50px 0; /* Kurangi padding section */
+    }
+
+    /* Header */
+    .logo img {
+        height: 55px;
+    }
+    .logo-text h1 {
+        font-size: 1.7rem;
+    }
+    .logo-text p {
+        font-size: 0.85rem;
+    }
+    .main-nav ul li {
+        margin-left: 25px; /* Kurangi jarak antar menu */
+    }
+    .main-nav ul li a {
+        font-size: 0.95rem;
+    }
+    .btn-nav {
+        padding: 7px 15px;
+        font-size: 0.9rem;
+    }
+
+    /* Hero Slider */
     .hero-slider {
         height: 500px;
     }
@@ -947,188 +969,366 @@ textarea {
     .slider-content p {
         font-size: 1.1rem;
     }
-    .main-nav ul li {
-        margin-left: 20px;
+
+    /* About Us Section */
+    .about-us .about-image {
+        min-width: unset; /* Izinkan gambar mengecil lebih jauh jika perlu */
+        max-width: 45%; /* Tetap jaga gambar agar tidak terlalu besar */
     }
-    .logo-text h1 {
-        font-size: 1.8rem;
+    .about-us .about-text p {
+        font-size: 1rem;
+    }
+
+    /* Programs/Achievements */
+    .program-item, .achievement-item {
+        padding: 25px;
+    }
+    .program-icon {
+        font-size: 3rem;
+    }
+    .program-item h3, .achievement-item h3 {
+        font-size: 1.3rem;
+    }
+    .program-item p, .achievement-item p {
+        font-size: 0.9rem;
+    }
+
+    /* News & Events */
+    .news-item img {
+        height: 180px;
+    }
+    .news-item h3 {
+        font-size: 1.2rem;
+    }
+    .news-item p {
+        font-size: 0.9rem;
+    }
+
+    /* Testimonials */
+    .testimonial-item .quote {
+        font-size: 1rem;
+    }
+
+    /* CTA Section */
+    .ppdb-cta h2 {
+        font-size: 2.5rem;
+    }
+    .ppdb-cta p {
+        font-size: 1.1rem;
+    }
+    .ppdb-btn {
+        padding: 16px 35px;
+        font-size: 1.2rem;
+    }
+
+    /* Contact Section */
+    .contact-info h3, .contact-form h3 {
+        font-size: 1.6rem;
+    }
+    .contact-info ul li {
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    .footer-col h3 {
+        font-size: 1.2rem;
+    }
+    .footer-col p, .footer-col ul li a {
+        font-size: 0.9rem;
+    }
+    .social-links-footer a {
+        font-size: 1.1rem;
     }
 }
 
+/* Untuk Layar yang Lebih Kecil dari 768px (Mobile ke Bawah) */
 @media (max-width: 768px) {
+    .container {
+        width: 95%; /* Lebih lebar lagi untuk HP */
+        padding: 0 10px;
+    }
+    .section-spacing {
+        padding: 40px 0; /* Padding lebih kecil */
+    }
+
+    /* Header */
     .header-top {
         flex-direction: column;
         text-align: center;
-        margin-bottom: 0;
-        padding-bottom: 0;
-        border-bottom: none;
+        margin-bottom: 10px; /* Beri sedikit margin antar bagian header */
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
     }
-    .contact-info, .social-links {
-        margin-bottom: 10px;
+    .contact-info span {
+        margin-right: 10px;
+        margin-bottom: 5px; /* Jarak vertikal antar info kontak */
     }
+    .social-links {
+        margin-top: 5px;
+    }
+
     .main-header .header-main {
-        flex-direction: column;
-        align-items: flex-start; /* Logo di kiri atas */
+        flex-direction: row; /* Tetap baris untuk logo dan ikon menu */
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        margin-right: auto; /* Dorong logo ke kiri */
+    }
+    .logo img {
+        height: 45px;
+        margin-right: 10px;
+    }
+    .logo-text h1 {
+        font-size: 1.5rem;
+    }
+    .logo-text p {
+        font-size: 0.75rem;
     }
 
     .main-nav {
         width: 100%;
-        margin-top: 15px;
+        position: absolute; /* Menu keluar dari aliran normal */
+        top: 100%; /* Di bawah header utama */
+        left: 0;
+        right: 0;
+        background-color: var(--dark-text);
+        box-shadow: var(--box-shadow-medium);
+        overflow: hidden;
+        max-height: 0; /* Sembunyikan menu secara default */
+        transition: max-height 0.5s ease-out, padding 0.5s ease-out; /* Transisi untuk buka/tutup */
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        z-index: 999; /* Pastikan di atas konten lain */
+    }
+    #menu-toggle:checked ~ .main-nav {
+        max-height: 400px; /* Tinggi maksimum saat dibuka, sesuaikan jika item banyak */
+        padding-bottom: 15px; /* Tambahkan padding saat terbuka */
     }
 
     .menu-icon {
-        display: block;
-        align-self: flex-end; /* Pindahkan ikon ke kanan */
-        margin-top: -55px; /* Sesuaikan posisi ikon */
-        margin-right: 15px;
+        display: block; /* Tampilkan ikon hamburger */
+        order: 2; /* Posisikan di kanan */
+        margin-right: 0; /* Hilangkan margin ekstra */
+        padding: 5px; /* Tambah area tap */
     }
 
     .main-nav ul {
-        flex-direction: column;
+        flex-direction: column; /* Menu vertikal di mobile */
         width: 100%;
-        background-color: var(--dark-text);
-        position: absolute;
-        left: 0;
-        top: 100%; /* Di bawah header utama */
-        max-height: 0; /* Sembunyikan menu */
-        overflow: hidden;
-        transition: max-height 0.5s ease-out;
-        box-shadow: var(--box-shadow-medium);
-        border-top: 1px solid rgba(255, 255, 255, 0.1);
-        border-bottom-left-radius: var(--border-radius-md);
-        border-bottom-right-radius: var(--border-radius-md);
-    }
-
-    #menu-toggle:checked ~ .nav-links {
-        max-height: 500px; /* Tinggi maksimum saat dibuka */
-        padding-bottom: 20px;
+        align-items: flex-start; /* Rata kiri */
     }
 
     .main-nav ul li {
+        width: 100%; /* Ambil seluruh lebar */
         margin: 0;
-        width: 100%;
-        text-align: center;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.08); /* Pemisah antar item */
     }
     .main-nav ul li:last-child {
         border-bottom: none;
     }
-
     .main-nav ul li a {
-        padding: 12px 0;
+        padding: 12px 20px; /* Padding item menu */
+        font-size: 1rem;
         display: block;
     }
     .main-nav ul li a::after {
-        display: none; /* Sembunyikan underline di mobile */
+        display: none; /* Sembunyikan efek underline di mobile */
+    }
+    .btn-nav { /* Tombol di dalam menu mobile */
+        width: calc(100% - 40px); /* Lebar penuh dikurangi padding */
+        text-align: center;
+        margin: 15px 20px 0 20px; /* Padding di sekitar tombol */
     }
 
+    /* Dropdown Menu di Mobile */
     .dropdown-content {
-        position: static; /* Posisikan di dalam menu */
+        position: static; /* Posisikan statis agar masuk ke aliran dokumen */
         box-shadow: none;
         border-radius: 0;
-        background-color: rgba(0, 0, 0, 0.1); /* Latar belakang sedikit transparan */
+        background-color: rgba(0, 0, 0, 0.15); /* Latar belakang sedikit transparan */
         min-width: unset;
-        opacity: 1;
+        opacity: 1; /* Selalu terlihat (akan diatur oleh max-height parent) */
         transform: translateY(0);
-        transition: none;
+        transition: none; /* Nonaktifkan transisi untuk dropdown */
         max-height: 0; /* Sembunyikan sub-menu secara default */
         overflow: hidden;
     }
 
-    .dropdown:hover .dropdown-content,
-    .dropdown.active .dropdown-content { /* Gunakan JS untuk class active */
-        max-height: 200px; /* Maks tinggi sub-menu */
-    }
-    .dropdown-content li a {
-        padding-left: 40px; /* Indentasi untuk sub-menu */
-        font-size: 0.9rem;
+    /* Ini perlu dikelola oleh JavaScript jika Anda ingin dropdown di mobile terbuka dengan tap */
+    /* Contoh: toggle class 'active' pada .dropdown parent, lalu CSS ini akan berfungsi */
+    .dropdown.active .dropdown-content {
+        max-height: 150px; /* Maks tinggi sub-menu saat dibuka */
+        transition: max-height 0.4s ease-out; /* Transisi untuk buka/tutup sub-menu */
     }
 
+    .dropdown-content li a {
+        padding: 10px 30px; /* Indentasi untuk sub-menu */
+        font-size: 0.95rem;
+    }
+    .dropdown-content li:last-child {
+        border-bottom: none;
+    }
+
+    /* Hero Slider */
     .hero-slider {
-        height: 400px;
+        height: 350px;
+        margin-bottom: 30px;
     }
     .slider-content h2 {
-        font-size: 2.2rem;
+        font-size: 2rem;
+        margin-bottom: 15px;
     }
     .slider-content p {
         font-size: 1rem;
+        margin-bottom: 25px;
+    }
+    .hero-btn {
+        padding: 12px 25px;
+        font-size: 1rem;
     }
 
+    /* Announcements Section - Mobile */
     .announcement-ticker {
         flex-direction: column;
-        align-items: flex-start;
+        align-items: center; /* Label dan ticker di tengah */
+        padding: 0 10px; /* Padding horizontal */
     }
     .ticker-label {
+        width: auto; /* Izinkan lebar otomatis */
         margin-bottom: 10px;
-        margin-right: 0;
-        width: 100%;
         text-align: center;
     }
     .ticker-content {
         width: 100%;
+        text-align: center; /* Pusatkan teks */
     }
-    /* Marquee CSS only for mobile */
+    /* Untuk CSS-only marquee di mobile jika JS dimatikan */
     .ticker-item {
-        position: relative; /* Set to relative for marquee */
-        animation: marquee 15s linear infinite;
-        opacity: 1;
+        position: relative; /* Atur ke relative untuk marquee CSS */
+        animation: marquee 15s linear infinite; /* Aktifkan marquee */
+        opacity: 1; /* Pastikan terlihat */
         transform: translateX(100%);
     }
     @keyframes marquee {
         0%   { transform: translateX(100%); }
         100% { transform: translateX(-100%); }
     }
-    .ticker-item.active-ticker {
-        animation: none; /* Matikan animasi JS jika ada */
+    .ticker-item.active-ticker { /* Jika JS aktif, ini akan menonaktifkan marquee */
+        animation: none;
+        transform: translateX(0);
     }
 
 
+    /* About Us Section */
     .about-us .about-content {
-        flex-direction: column;
+        flex-direction: column; /* Stack gambar dan teks vertikal */
     }
     .about-us .about-image {
-        max-width: 100%;
+        max-width: 100%; /* Gambar ambil lebar penuh */
+    }
+    .about-us .about-text {
+        min-width: unset; /* Izinkan teks mengecil */
+    }
+    .about-us .about-text p {
+        font-size: 0.95rem;
     }
 
-    .contact-content {
-        flex-direction: column;
+    /* Grid Sections (Programs, Achievements, News, Testimonials) */
+    .program-grid, .achievement-grid, .news-grid, .testimonial-grid {
+        grid-template-columns: 1fr; /* Satu kolom di mobile */
+        gap: 25px;
     }
-}
+    .program-item, .achievement-item, .news-item, .testimonial-item {
+        margin: auto; /* Pusatkan item jika lebarnya kurang dari 100% */
+        max-width: 400px; /* Batasi lebar item agar tidak terlalu lebar di layar besar */
+    }
 
-@media (max-width: 480px) {
-    .logo img {
-        height: 50px;
+
+    /* Gallery */
+    .gallery-grid {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Kolom lebih kecil untuk galeri */
+        gap: 10px;
     }
-    .logo-text h1 {
-        font-size: 1.5rem;
+    .gallery-grid img {
+        height: 120px;
     }
-    .logo-text p {
-        font-size: 0.8rem;
-    }
-    .hero-slider {
-        height: 350px;
-    }
-    .slider-content h2 {
-        font-size: 1.8rem;
-    }
-    .slider-content p {
-        font-size: 0.9rem;
-    }
-    .hero-btn {
-        padding: 12px 25px;
-        font-size: 1rem;
-    }
+
+    /* CTA Section */
     .ppdb-cta h2 {
-        font-size: 2.2rem;
+        font-size: 2rem;
     }
     .ppdb-cta p {
         font-size: 1rem;
+        padding: 0 10px;
     }
     .ppdb-btn {
-        padding: 15px 30px;
-        font-size: 1.1rem;
+        padding: 14px 28px;
+        font-size: 1.05rem;
+    }
+
+    /* Contact Section */
+    .contact-content {
+        flex-direction: column; /* Stack vertikal */
+        gap: 30px;
+    }
+    .contact-info, .contact-form {
+        min-width: unset;
+        padding: 25px;
+    }
+    .contact-info h3, .contact-form h3 {
+        font-size: 1.5rem;
+    }
+    .contact-info ul li {
+        font-size: 0.95rem;
+    }
+    .form-group label {
+        font-size: 0.9rem;
+    }
+    .form-group input, .form-group textarea {
+        padding: 10px;
+        font-size: 0.95rem;
+    }
+    .submit-btn {
+        padding: 14px;
+        font-size: 1rem;
+    }
+
+    /* Footer */
+    .main-footer {
+        padding: 40px 0 15px 0;
+    }
+    .footer-grid {
+        grid-template-columns: 1fr; /* Satu kolom */
+        gap: 25px;
+        text-align: center; /* Pusatkan teks di footer mobile */
+    }
+    .footer-col h3 {
+        text-align: center;
+        padding-bottom: 5px; /* Kurangi padding bawah */
+    }
+    .footer-col h3::after { /* Posisikan garis bawah di tengah */
+        left: 50%;
+        transform: translateX(-50%);
+        width: 40px; /* Kurangi lebar garis */
+    }
+    .footer-col ul {
+        align-items: center; /* Untuk list */
+    }
+    .footer-col ul li a {
+        padding: 5px 0;
+    }
+    .contact-footer p i {
+        margin-right: 5px;
+    }
+    .social-links-footer {
+        margin-top: 15px;
+    }
+    .social-links-footer a {
+        margin: 0 10px;
     }
 }
+
 
 /* Keyframe for fade-in effect on sections (requires Intersection Observer API in JS) */
 .fade-in-section {
@@ -1139,4 +1339,4 @@ textarea {
 .fade-in-section.is-visible {
     opacity: 1;
     transform: translateY(0);
-  }
+}
