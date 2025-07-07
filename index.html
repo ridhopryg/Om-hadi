@@ -6,7 +6,7 @@
     <title>Profil Perusahaan - [Nama Perusahaan Anda]</title>
 
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
+
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/css/lightbox.min.css">
@@ -19,13 +19,13 @@
         <div class="container">
             <div class="header-top">
                 <div class="contact-info">
-                    <span><i class="fas fa-phone"></i> [Nomor Telepon Anda]</span>
-                    <span><i class="fas fa-envelope"></i> [email Anda]</span>
+                    <span><i class="fas fa-phone"></i> <span id="header-phone">[Nomor Telepon Anda]</span></span>
+                    <span><i class="fas fa-envelope"></i> <span id="header-email">[email Anda]</span></span>
                 </div>
                 <div class="social-links">
-                    <a href="#"><i class="fab fa-facebook-f"></i></a>
-                    <a href="#"><i class="fab fa-twitter"></i></a>
-                    <a href="#"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
                     <a href="#" class="lang-btn" data-lang="id">ID</a>
                     <a href="#" class="lang-btn" data-lang="en">EN</a>
                 </div>
@@ -33,33 +33,35 @@
 
             <div class="header-main">
                 <div class="logo">
-                    <img src="https://via.placeholder.com/60/007bff/ffffff?text=LOGO" alt="Logo Perusahaan"> <div class="logo-text">
-                        <h1>[Nama Perusahaan Anda]</h1>
-                        <p>Penyedia Solusi Angkutan Pupuk</p>
+                    <img src="https://via.placeholder.com/60/007bff/ffffff?text=LOGO" alt="Logo Perusahaan">
+                    <div class="logo-text">
+                        <h1 id="company-main-name">[Nama Perusahaan Anda]</h1>
+                        <p id="company-main-tagline">Penyedia Solusi Angkutan Pupuk</p>
                     </div>
                 </div>
-                
+
                 <input type="checkbox" id="menu-toggle">
                 <label for="menu-toggle" class="menu-icon"><i class="fas fa-bars"></i></label>
 
                 <nav class="main-nav">
                     <ul class="nav-links">
-                        <li><a href="#hero-slider">Beranda</a></li>
-                        <li><a href="#about-us">Tentang Kami</a></li>
+                        <li><a href="#hero-slider" id="nav-home">Beranda</a></li>
+                        <li><a href="#about-us" id="nav-about">Tentang Kami</a></li>
                         <li class="dropdown">
-                            <a href="#">Layanan <i class="fas fa-chevron-down"></i></a>
+                            <a href="#" id="nav-services-dropdown">Layanan <i class="fas fa-chevron-down"></i></a>
                             <ul class="dropdown-content">
-                                <li><a href="#">Angkutan Curah</a></li>
-                                <li><a href="#">Angkutan Kemasan</a></li>
-                                <li><a href="#">Logistik Terintegrasi</a></li>
+                                <li><a href="#" id="nav-service-bulk">Angkutan Curah</a></li>
+                                <li><a href="#" id="nav-service-packaged">Angkutan Kemasan</a></li>
+                                <li><a href="#" id="nav-service-integrated">Logistik Terintegrasi</a></li>
                             </ul>
                         </li>
-                        <li><a href="#programs">Program Kami</a></li>
-                        <li><a href="#achievements">Prestasi</a></li>
-                        <li><a href="#news-events">Berita & Acara</a></li>
-                        <li><a href="#gallery">Galeri</a></li>
-                        <li><a href="#contact">Kontak</a></li>
-                        <li><a href="#" class="btn btn-nav">PPDB Sekarang!</a></li> </ul>
+                        <li><a href="#programs" id="nav-programs">Program Kami</a></li>
+                        <li><a href="#achievements" id="nav-achievements">Prestasi</a></li>
+                        <li><a href="#news-events" id="nav-news-events">Berita & Acara</a></li>
+                        <li><a href="#gallery" id="nav-gallery">Galeri</a></li>
+                        <li><a href="#contact" id="nav-contact">Kontak</a></li>
+                        <li><a href="#" class="btn btn-nav" id="nav-cta">Hubungi Kami!</a></li>
+                    </ul>
                 </nav>
             </div>
         </div>
@@ -69,32 +71,32 @@
         <section id="hero-slider" class="hero-slider">
             <div class="slider-item active" style="background-image: url('https://via.placeholder.com/1920x600/0056b3/ffffff?text=Kapal+Besar');">
                 <div class="slider-content">
-                    <h2>Penyedia Solusi Angkutan Pupuk Terkemuka</h2>
-                    <p>Kami mengkhususkan diri dalam pengiriman pupuk yang efisien dan aman ke seluruh Indonesia, mendukung ketahanan pangan nasional.</p>
-                    <a href="#" class="btn hero-btn">Pelajari Lebih Lanjut</a>
+                    <h2 id="slider-heading-1">Penyedia Solusi Angkutan Pupuk Terkemuka</h2>
+                    <p id="slider-text-1">Kami mengkhususkan diri dalam pengiriman pupuk yang efisien dan aman ke seluruh Indonesia, mendukung ketahanan pangan nasional.</p>
+                    <a href="#" class="btn hero-btn" id="slider-btn-1">Pelajari Lebih Lanjut</a>
                 </div>
             </div>
             <div class="slider-item" style="background-image: url('https://via.placeholder.com/1920x600/004085/ffffff?text=Inovasi+Logistik');">
                 <div class="slider-content">
-                    <h2>Inovasi Logistik untuk Pertanian Indonesia</h2>
-                    <p>Memastikan rantai pasok pupuk berjalan lancar, dari produsen hingga petani di setiap sudut negeri.</p>
-                    <a href="#" class="btn hero-btn">Hubungi Kami</a>
+                    <h2 id="slider-heading-2">Inovasi Logistik untuk Pertanian Indonesia</h2>
+                    <p id="slider-text-2">Memastikan rantai pasok pupuk berjalan lancar, dari produsen hingga petani di setiap sudut negeri.</p>
+                    <a href="#" class="btn hero-btn" id="slider-btn-2">Hubungi Kami</a>
                 </div>
             </div>
             <div class="slider-dots">
-                <div class="active"></div>
-                <div></div>
+                <div class="active" data-slide="0"></div>
+                <div data-slide="1"></div>
             </div>
         </section>
 
         <section class="announcements-section section-spacing">
             <div class="container">
                 <div class="announcement-ticker">
-                    <span class="ticker-label"><i class="fas fa-bullhorn"></i> Pengumuman Terbaru</span>
+                    <span class="ticker-label"><i class="fas fa-bullhorn"></i> <span id="ticker-title">Pengumuman Terbaru</span></span>
                     <div class="ticker-content">
-                        <div class="ticker-item active-ticker">Pendaftaran Siswa Baru Tahap 1 Dibuka! Batas waktu 30 Juli 2025.</div>
-                        <div class="ticker-item">Informasi beasiswa untuk tahun ajaran 2025/2026 telah tersedia.</div>
-                        <div class="ticker-item">Jadwal Ujian Akhir Semester dapat diunduh di halaman Pengumuman.</div>
+                        <div class="ticker-item active-ticker" id="ticker-item-1">Pengiriman ekspres ke wilayah terpencil kini tersedia! Hubungi kami untuk detail.</div>
+                        <div class="ticker-item" id="ticker-item-2">Informasi jadwal kapal untuk kuartal berikutnya telah diterbitkan.</div>
+                        <div class="ticker-item" id="ticker-item-3">Penawaran khusus untuk kontrak pengiriman pupuk jangka panjang.</div>
                     </div>
                 </div>
             </div>
@@ -102,17 +104,17 @@
 
         <section id="about-us" class="section-spacing bg-light fade-in-section">
             <div class="container">
-                <h2 class="text-center">Tentang Kami</h2>
+                <h2 class="text-center" id="about-heading">Tentang Kami</h2>
                 <div class="about-content">
                     <img src="https://via.placeholder.com/600x400/0056b3/ffffff?text=Perusahaan+Kami" alt="Tentang Perusahaan" class="about-image">
                     <div class="about-text">
-                        <p>
+                        <p id="about-paragraph-1">
                             [Nama Perusahaan Anda] adalah perusahaan pelayaran yang berdedikasi dalam menyediakan layanan transportasi laut yang handal dan terintegrasi untuk industri pertanian. Didirikan pada tahun [Tahun Didirikan], kami telah tumbuh menjadi mitra terpercaya bagi produsen pupuk, distributor, dan petani di seluruh negeri.
                         </p>
-                        <p>
+                        <p id="about-paragraph-2">
                             Armada kapal kami yang modern dan dilengkapi dengan teknologi terkini memastikan pengiriman pupuk dalam jumlah besar dapat dilakukan dengan efisiensi dan keamanan maksimal. Kami memprioritaskan ketepatan waktu dan integritas kargo, memahami pentingnya pupuk dalam siklus pertanian.
                         </p>
-                        <a href="#" class="btn read-more-btn">Baca Selengkapnya</a>
+                        <a href="#" class="btn read-more-btn" id="about-read-more">Baca Selengkapnya</a>
                     </div>
                 </div>
             </div>
@@ -120,27 +122,27 @@
 
         <section id="programs" class="section-spacing fade-in-section">
             <div class="container">
-                <h2 class="text-center">Program & Layanan Unggulan</h2>
+                <h2 class="text-center" id="programs-heading">Program & Layanan Unggulan</h2>
                 <div class="program-grid">
                     <div class="program-item">
                         <i class="fas fa-ship program-icon"></i>
-                        <h3>Angkutan Pupuk Curah</h3>
-                        <p>Pengiriman pupuk dalam jumlah besar menggunakan kapal khusus curah dengan standar keamanan tinggi.</p>
+                        <h3 id="program-title-1">Angkutan Pupuk Curah</h3>
+                        <p id="program-desc-1">Pengiriman pupuk dalam jumlah besar menggunakan kapal khusus curah dengan standar keamanan tinggi.</p>
                     </div>
                     <div class="program-item">
                         <i class="fas fa-box-open program-icon"></i>
-                        <h3>Angkutan Pupuk Kemasan</h3>
-                        <p>Solusi pengiriman pupuk dalam kemasan menggunakan kapal kargo umum yang efisien dan tepat waktu.</p>
+                        <h3 id="program-title-2">Angkutan Pupuk Kemasan</h3>
+                        <p id="program-desc-2">Solusi pengiriman pupuk dalam kemasan menggunakan kapal kargo umum yang efisien dan tepat waktu.</p>
                     </div>
                     <div class="program-item">
                         <i class="fas fa-truck-moving program-icon"></i>
-                        <h3>Logistik Terintegrasi</h3>
-                        <p>Layanan logistik end-to-end, termasuk penanganan pelabuhan, pergudangan, dan pengiriman darat ke lokasi tujuan.</p>
+                        <h3 id="program-title-3">Logistik Terintegrasi</h3>
+                        <p id="program-desc-3">Layanan logistik end-to-end, termasuk penanganan pelabuhan, pergudangan, dan pengiriman darat ke lokasi tujuan.</p>
                     </div>
                     <div class="program-item">
                         <i class="fas fa-handshake program-icon"></i>
-                        <h3>Kemitraan Jangka Panjang</h3>
-                        <p>Membangun hubungan jangka panjang dengan klien untuk mendukung pertumbuhan pertanian berkelanjutan.</p>
+                        <h3 id="program-title-4">Kemitraan Jangka Panjang</h3>
+                        <p id="program-desc-4">Membangun hubungan jangka panjang dengan klien untuk mendukung pertumbuhan pertanian berkelanjutan.</p>
                     </div>
                 </div>
             </div>
@@ -148,23 +150,23 @@
 
         <section id="achievements" class="section-spacing bg-light fade-in-section">
             <div class="container">
-                <h2 class="text-center">Pencapaian & Keunggulan Kami</h2>
+                <h2 class="text-center" id="achievements-heading">Pencapaian & Keunggulan Kami</h2>
                 <div class="achievement-grid">
                     <div class="achievement-item">
-                        <h3><i class="fas fa-medal"></i> Sertifikasi Internasional</h3>
-                        <p>Memiliki sertifikasi kualitas dan keamanan pelayaran yang diakui secara global.</p>
+                        <h3><i class="fas fa-medal"></i> <span id="achievement-title-1">Sertifikasi Internasional</span></h3>
+                        <p id="achievement-desc-1">Memiliki sertifikasi kualitas dan keamanan pelayaran yang diakui secara global.</p>
                     </div>
                     <div class="achievement-item">
-                        <h3><i class="fas fa-truck-loading"></i> Pengiriman Tepat Waktu</h3>
-                        <p>Tingkat ketepatan waktu pengiriman mencapai lebih dari 98% setiap tahunnya.</p>
+                        <h3><i class="fas fa-truck-loading"></i> <span id="achievement-title-2">Pengiriman Tepat Waktu</span></h3>
+                        <p id="achievement-desc-2">Tingkat ketepatan waktu pengiriman mencapai lebih dari 98% setiap tahunnya.</p>
                     </div>
                     <div class="achievement-item">
-                        <h3><i class="fas fa-users"></i> Jaringan Luas</h3>
-                        <p>Menjangkau lebih dari 30 pelabuhan utama di seluruh Indonesia.</p>
+                        <h3><i class="fas fa-users"></i> <span id="achievement-title-3">Jaringan Luas</span></h3>
+                        <p id="achievement-desc-3">Menjangkau lebih dari 30 pelabuhan utama di seluruh Indonesia.</p>
                     </div>
                     <div class="achievement-item">
-                        <h3><i class="fas fa-seedling"></i> Dukungan Pertanian</h3>
-                        <p>Berperan aktif dalam mendukung ketahanan pangan nasional melalui distribusi pupuk.</p>
+                        <h3><i class="fas fa-seedling"></i> <span id="achievement-title-4">Dukungan Pertanian</span></h3>
+                        <p id="achievement-desc-4">Berperan aktif dalam mendukung ketahanan pangan nasional melalui distribusi pupuk.</p>
                     </div>
                 </div>
             </div>
@@ -172,12 +174,106 @@
 
         <section id="news-events" class="section-spacing fade-in-section">
             <div class="container">
-                <h2 class="text-center">Berita & Acara Terbaru</h2>
+                <h2 class="text-center" id="news-events-heading">Berita & Acara Terbaru</h2>
                 <div class="news-grid">
                     <div class="news-item">
                         <img src="https://via.placeholder.com/400x200/56b300/ffffff?text=Berita+1" alt="Berita Terbaru">
-                        <h3>Peluncuran Kapal Kargo Baru untuk Rute Timur</h3>
-                        <p class="date"><i class="far fa-calendar-alt"></i> 01 Juli 2025</p>
-                        <p>Perusahaan kami dengan bangga mengumumkan penambahan kapal kargo terbaru untuk memperkuat rute distribusi di wilayah Indonesia Timur.</p>
+                        <h3 id="news-title-1">Peluncuran Kapal Kargo Baru untuk Rute Timur</h3>
+                        <p class="date"><i class="far fa-calendar-alt"></i> <span id="news-date-1">01 Juli 2025</span></p>
+                        <p id="news-desc-1">Perusahaan kami dengan bangga mengumumkan penambahan kapal kargo terbaru untuk memperkuat rute distribusi di wilayah Indonesia Timur.</p>
+                        <a href="#" class="read-more-link" id="news-read-more-1">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
                     </div>
-                    <div class
+                    <div class="news-item">
+                        <img src="https://via.placeholder.com/400x200/b30056/ffffff?text=Acara+2" alt="Acara Perusahaan">
+                        <h3 id="news-title-2">Partisipasi dalam Pameran Logistik Nasional 2025</h3>
+                        <p class="date"><i class="far fa-calendar-alt"></i> <span id="news-date-2">15 Juni 2025</span></p>
+                        <p id="news-desc-2">Kami akan berpartisipasi dalam Pameran Logistik Nasional tahun ini. Kunjungi booth kami untuk diskusi lebih lanjut tentang solusi logistik kami.</p>
+                        <a href="#" class="read-more-link" id="news-read-more-2">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                    <div class="news-item">
+                        <img src="https://via.placeholder.com/400x200/00b356/ffffff?text=Berita+3" alt="Kolaborasi">
+                        <h3 id="news-title-3">Kolaborasi dengan Distributor Pupuk Terbesar</h3>
+                        <p class="date"><i class="far fa-calendar-alt"></i> <span id="news-date-3">10 Mei 2025</span></p>
+                        <p id="news-desc-3">Kerja sama strategis baru telah terjalin dengan distributor pupuk terkemuka, memperluas jangkauan layanan kami ke seluruh pelosok negeri.</p>
+                        <a href="#" class="read-more-link" id="news-read-more-3">Baca Selengkapnya <i class="fas fa-arrow-right"></i></a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="gallery" class="section-spacing bg-light fade-in-section">
+            <div class="container">
+                <h2 class="text-center" id="gallery-heading">Galeri Kami</h2>
+                <div class="gallery-grid">
+                    <a href="https://via.placeholder.com/800x600/007bff/ffffff?text=Kapal+1" data-lightbox="gallery" data-title="Kapal Angkut Pupuk 1" class="gallery-item">
+                        <img src="https://via.placeholder.com/400x300/007bff/ffffff?text=Kapal+1" alt="Kapal Angkut Pupuk">
+                    </a>
+                    <a href="https://via.placeholder.com/800x600/28a745/ffffff?text=Proses+Muat" data-lightbox="gallery" data-title="Proses Pemuatan Pupuk" class="gallery-item">
+                        <img src="https://via.placeholder.com/400x300/28a745/ffffff?text=Proses+Muat" alt="Proses Pemuatan">
+                    </a>
+                    <a href="https://via.placeholder.com/800x600/ffc107/ffffff?text=Dermaga" data-lightbox="gallery" data-title="Aktivitas di Dermaga" class="gallery-item">
+                        <img src="https://via.placeholder.com/400x300/ffc107/ffffff?text=Dermaga" alt="Dermaga">
+                    </a>
+                    <a href="https://via.placeholder.com/800x600/dc3545/ffffff?text=Armada" data-lightbox="gallery" data-title="Armada Kapal Kami" class="gallery-item">
+                        <img src="https://via.placeholder.com/400x300/dc3545/ffffff?text=Armada" alt="Armada">
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="section-spacing fade-in-section">
+            <div class="container">
+                <h2 class="text-center" id="contact-heading">Hubungi Kami</h2>
+                <div class="contact-content">
+                    <div class="contact-form-wrapper">
+                        <h3 id="form-title">Kirim Pesan Kepada Kami</h3>
+                        <form action="#" method="POST" class="contact-form">
+                            <div class="form-group">
+                                <label for="fullName" id="label-fullname">Nama Lengkap</label>
+                                <input type="text" id="fullName" name="fullName" placeholder="Nama Anda" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="email" id="label-email">Email Anda</label>
+                                <input type="email" id="email" name="email" placeholder="contoh@domain.com" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="subject" id="label-subject">Subjek</label>
+                                <input type="text" id="subject" name="subject" placeholder="Subjek Pesan" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="message" id="label-message">Pesan Anda</label>
+                                <textarea id="message" name="message" rows="6" placeholder="Tulis pesan Anda di sini..." required></textarea>
+                            </div>
+                            <button type="submit" id="submit-button">Kirim Pesan</button>
+                        </form>
+                    </div>
+                    <div class="contact-details">
+                        <h3 id="details-title">Informasi Kontak</h3>
+                        <p><i class="fas fa-map-marker-alt"></i> <span id="contact-address-label">Alamat:</span> <span id="contact-address-value">[Alamat Kantor Anda]</span></p>
+                        <p><i class="fas fa-phone-alt"></i> <span id="contact-phone-label-detail">Telepon:</span> <a href="tel:[Nomor Telepon Anda]" id="contact-phone-value-detail">[Nomor Telepon Anda]</a></p>
+                        <p><i class="fas fa-envelope"></i> <span id="contact-email-label-detail">Email:</span> <a href="mailto:[email Anda]" id="contact-email-value-detail">[email Anda]</a></p>
+                        <p><i class="fas fa-globe"></i> <span id="contact-website-label-detail">Website:</span> <a href="http://www.yourcompany.com" target="_blank" id="contact-website-value-detail">www.yourcompany.com</a></p>
+                        <div class="map-placeholder">
+                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15959.055627209707!2d109.33005895!3d-0.03848135!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e31ea2316e133e9%3A0x6b88b77c59a3c200!2sPontianak%2C%20Kota%20Pontianak%2C%20Kalimantan%20Barat!5e0!3m2!1sid!2sid!4v1703232000000!5m2!1sid!2sid" width="100%" height="250" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2025 <span id="footer-company-name">[Nama Perusahaan Anda]</span>. <span id="footer-copyright">Hak Cipta Dilindungi.</span></p>
+            <div class="footer-links">
+                <a href="#" id="footer-privacy">Kebijakan Privasi</a>
+                <a href="#" id="footer-terms">Syarat & Ketentuan</a>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lightbox2/2.11.3/js/lightbox.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
