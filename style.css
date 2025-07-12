@@ -1,19 +1,19 @@
-/* General Styles & Variables */
+/* General Styles & Variables - (Tidak ada perubahan di sini) */
 :root {
-    --primary-blue: #0A1F40; /* Darker blue, almost navy from Zentiv */
-    --secondary-blue: #1C3E6C; /* Slightly lighter dark blue */
-    --accent-blue: #4A90E2; /* Lighter, vibrant blue */
-    --accent-gradient-start: #4A90E2; /* Start of gradient (lighter blue) */
-    --accent-gradient-end: #1C3E6C; /* End of gradient (darker blue) */
+    --primary-blue: #0A1F40;
+    --secondary-blue: #1C3E6C;
+    --accent-blue: #4A90E2;
+    --accent-gradient-start: #4A90E2;
+    --accent-gradient-end: #1C3E6C;
     --text-color: #333;
-    --light-bg: #F8FAFF; /* Very light background */
+    --light-bg: #F8FAFF;
     --white: #FFFFFF;
     --card-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
     --hover-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
 }
 
 body {
-    font-family: 'Manrope', sans-serif; /* Body font similar to Zentiv's clean look */
+    font-family: 'Manrope', sans-serif;
     margin: 0;
     padding: 0;
     line-height: 1.7;
@@ -23,16 +23,16 @@ body {
 }
 
 .container {
-    width: 88%; /* Slightly wider container */
-    max-width: 1280px; /* Max width for large screens */
+    width: 88%;
+    max-width: 1280px;
     margin: auto;
-    padding: 60px 0; /* More padding */
+    padding: 60px 0;
     position: relative;
-    z-index: 2; /* Ensure content is above background effects */
+    z-index: 2;
 }
 
 h1, h2, h3 {
-    font-family: 'Poppins', sans-serif; /* Heading font from Zentiv aesthetic */
+    font-family: 'Poppins', sans-serif;
     color: var(--primary-blue);
     text-align: center;
     margin-bottom: 25px;
@@ -42,7 +42,7 @@ h1, h2, h3 {
 h1 {
     font-size: 3.8em;
     margin-bottom: 15px;
-    color: var(--white); /* White for header */
+    color: var(--white);
     text-shadow: 3px 3px 6px rgba(0, 0, 0, 0.3);
 }
 
@@ -58,9 +58,9 @@ h2::after {
     left: 50%;
     bottom: 0;
     transform: translateX(-50%);
-    width: 80px; /* Longer accent line */
+    width: 80px;
     height: 5px;
-    background: linear-gradient(to right, var(--accent-blue), var(--secondary-blue)); /* Gradient line */
+    background: linear-gradient(to right, var(--accent-blue), var(--secondary-blue));
     border-radius: 3px;
 }
 
@@ -78,21 +78,21 @@ ul {
 
 ul li {
     margin-bottom: 15px;
-    padding-left: 35px; /* More space for icon */
+    padding-left: 35px;
     position: relative;
     font-size: 1.05em;
 }
 
 ul li .fas {
-    color: var(--accent-blue); /* Blue for bullets */
+    color: var(--accent-blue);
     position: absolute;
     left: 0;
-    top: 5px; /* Adjust vertical alignment */
+    top: 5px;
     font-size: 1.3em;
-    text-shadow: 0 0 5px rgba(var(--accent-blue), 0.3); /* Subtle glow */
+    text-shadow: 0 0 5px rgba(var(--accent-blue), 0.3);
 }
 
-/* Animations */
+/* Animations - (Tidak ada perubahan di sini) */
 @keyframes fadeIn {
     from { opacity: 0; transform: translateY(20px); }
     to { opacity: 1; transform: translateY(0); }
@@ -111,11 +111,11 @@ ul li .fas {
 .delay-6 { animation-delay: 1.2s; }
 
 
-/* Header */
+/* Header - (Hanya penambahan text-align pada .tagline, sudah diubah sebelumnya) */
 header {
-    background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue)); /* Gradient background */
+    background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
     color: var(--white);
-    padding: 80px 0 150px 0; /* Adjusted padding-bottom as wave is removed */
+    padding: 80px 0 150px 0;
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -126,11 +126,11 @@ header {
     color: #CCE0FF;
     font-weight: 400;
     margin-top: 15px;
-    margin-bottom: 40px; /* Jarak bawah tagline ke tombol */
-    text-align: center; /* <<< DITAMBAHKAN/DIPASTIKAN */
+    margin-bottom: 40px;
+    text-align: center; /* Dipastikan rata tengah */
 }
 
-/* Navigasi */
+/* Navigasi - (Tidak ada perubahan di sini untuk default desktop) */
 nav {
     position: absolute;
     top: 0;
@@ -139,7 +139,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 50px; /* Padding horizontal menjadi px untuk konsistensi */
+    padding: 20px 50px;
     z-index: 10;
     background: rgba(0, 0, 0, 0.1);
 }
@@ -150,19 +150,18 @@ nav {
     font-weight: 700;
     font-size: 1.8em;
     text-decoration: none;
-    white-space: nowrap; /* Mencegah logo pecah baris */
+    white-space: nowrap;
 }
 
-/* Tambahan styling untuk logo gambar di dalam .logo */
 .logo img {
-    height: 40px; /* Tinggi gambar logo */
-    border-radius: 5px; /* Border radius sesuai di HTML */
-    vertical-align: middle; /* Memastikan gambar sejajar dengan teks jika ada */
+    height: 40px;
+    border-radius: 5px;
+    vertical-align: middle;
 }
 .logo span {
-    color: white; /* Pastikan teks logo berwarna putih */
+    color: white;
     font-weight: 700;
-    font-size: 1.5em; /* Ukuran font teks logo */
+    font-size: 1.5em;
 }
 
 .nav-links {
@@ -210,7 +209,7 @@ nav {
     background: linear-gradient(to right, var(--accent-blue), var(--secondary-blue));
     box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
     border-radius: 30px;
-    color: var(--white); /* Pastikan tombol nav juga berwarna putih */
+    color: var(--white);
 }
 
 .nav-links .nav-btn:hover {
@@ -220,23 +219,22 @@ nav {
 }
 
 
-/* Hamburger Menu (Hidden on Desktop) */
+/* Hamburger Menu (Hidden on Desktop) - (Tidak ada perubahan signifikan di sini) */
 #menu-toggle {
-    display: none; /* Sembunyikan checkbox */
+    display: none;
 }
 
 .hamburger-menu {
-    display: none; /* Default: Sembunyikan hamburger di desktop */
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
     height: 20px;
     cursor: pointer;
-    z-index: 11; /* Pastikan di atas menu dan konten lain */
+    z-index: 11;
     position: relative;
 }
 
-/* Styling bar hamburger */
 .hamburger-menu .bar {
     width: 100%;
     height: 3px;
@@ -246,19 +244,18 @@ nav {
     transform-origin: center;
 }
 
-/* Rotate and position bars for 'X' icon when checkbox is checked */
 #menu-toggle:checked + .hamburger-menu .bar:nth-child(1) {
     transform: translateY(8.5px) rotate(45deg);
 }
 #menu-toggle:checked + .hamburger-menu .bar:nth-child(2) {
-    opacity: 0; /* Sembunyikan bar tengah */
+    opacity: 0;
 }
 #menu-toggle:checked + .hamburger-menu .bar:nth-child(3) {
     transform: translateY(-8.5px) rotate(-45deg);
 }
 
 
-/* Buttons */
+/* Buttons - (Tidak ada perubahan di sini) */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -315,7 +312,7 @@ nav {
 }
 
 
-/* Section Styling */
+/* Section Styling - (Tidak ada perubahan di sini) */
 .section-content {
     position: relative;
     background-color: var(--white);
@@ -327,7 +324,7 @@ nav {
 
 .about-section {
     background-color: var(--light-bg);
-    margin-top: 0; /* Removed negative margin as wave is gone */
+    margin-top: 0;
     border-radius: 10px 10px 0 0;
     box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
 }
@@ -355,7 +352,7 @@ nav {
 }
 
 
-/* Section Header */
+/* Section Header - (Tidak ada perubahan di sini) */
 .section-header {
     text-align: center;
     margin-bottom: 50px;
@@ -372,7 +369,7 @@ nav {
 }
 
 
-/* Card Container (for Vision & Mission) */
+/* Card Container (for Vision & Mission) - (Tidak ada perubahan di sini) */
 .card-container {
     display: flex;
     flex-wrap: wrap;
@@ -433,7 +430,7 @@ nav {
 }
 
 
-/* Gallery Section */
+/* Gallery Section - (Tidak ada perubahan di sini) */
 .gallery {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -521,7 +518,7 @@ nav {
     font-size: 0.95em;
 }
 
-/* Advantages Grid */
+/* Advantages Grid - (Tidak ada perubahan di sini) */
 .advantage-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -590,7 +587,7 @@ nav {
 }
 
 
-/* Target List */
+/* Target List - (Tidak ada perubahan di sini) */
 .target-list {
     display: flex;
     flex-direction: column;
@@ -623,7 +620,7 @@ nav {
 }
 
 
-/* Footer */
+/* Footer - (Tidak ada perubahan di sini) */
 footer {
     background: var(--primary-blue);
     color: var(--white);
@@ -640,38 +637,43 @@ footer {
     .nav-links {
         display: flex;
         flex-direction: column;
-        width: 100%;
+        /* Hapus width: 100%; karena position: absolute dan left/right 0 akan menangani lebar */
+        /* width: 100%; */ /* <<< DIHAPUS/DIKOMENTARI */
         position: absolute;
-        top: 100%; /* Di bawah nav bar utama */
+        top: 100%;
         left: 0;
-        background: var(--primary-blue); /* Background untuk menu mobile */
+        right: 0; /* <<< DITAMBAHKAN: Memastikan menu overlay memenuhi lebar */
+        background: var(--primary-blue);
         padding: 0;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        max-height: 0; /* Default: Sembunyi dengan tinggi 0 */
-        overflow: hidden; /* Sembunyikan konten yang meluap */
+        max-height: 0;
+        overflow-y: hidden; /* <<< DIRUBAH: Gunakan overflow-y, bukan overflow, dan set hidden secara default */
+        overflow-x: hidden; /* Tambahkan ini untuk mencegah scrollbar horizontal di menu itu sendiri */
         transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out, opacity 0.5s ease-in-out;
         opacity: 0;
-        z-index: 9; /* Di bawah nav bar tapi di atas konten lain */
+        z-index: 9;
     }
 
     /* Tampilkan menu mobile ketika checkbox di-check */
     #menu-toggle:checked ~ .nav-links {
-        max-height: 700px; /* <<< DIRUBAH: Ditingkatkan untuk menghindari pemotongan */
+        max-height: 700px; /* Nilai ini mungkin perlu disesuaikan berdasarkan jumlah item menu Anda */
         padding-top: 20px;
         padding-bottom: 20px;
         opacity: 1;
+        overflow-y: auto; /* <<< DIRUBAH: Jika menu terlalu panjang, scrollbar vertikal muncul otomatis */
+        -webkit-overflow-scrolling: touch; /* Untuk scrolling yang lebih mulus di iOS */
     }
 
     .nav-links li {
-        margin: 0; /* Hapus margin horizontal */
+        margin: 0;
         width: 100%;
         text-align: center;
     }
 
     .nav-links li a {
         display: block;
-        padding: 15px 20px;
+        padding: 15px 20px; /* Padding ini penting untuk ruang teks */
         color: var(--white);
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
@@ -681,17 +683,17 @@ footer {
     }
 
     .nav-links li a::after {
-        display: none; /* Hapus underline di mobile */
+        display: none;
     }
 
     .nav-links .nav-btn {
-        margin: 20px auto; /* Pusatkan tombol di menu mobile */
+        margin: 20px auto;
         display: block;
-        width: fit-content;
+        width: fit-content; /* Untuk memastikan tombol tidak terlalu lebar */
     }
 
     .hamburger-menu {
-        display: flex; /* Tampilkan hamburger di layar kecil */
+        display: flex;
     }
 
     /* General responsive adjustments */
@@ -702,8 +704,8 @@ footer {
         font-size: 2.2em;
     }
     .tagline {
-        font-size: 1.5em; /* Tetap sama seperti di luar media query */
-        text-align: center; /* <<< DIPASTIKAN */
+        font-size: 1.5em;
+        text-align: center; /* Dipastikan rata tengah */
     }
     .card-container, .advantage-grid, .gallery {
         gap: 30px;
@@ -725,8 +727,8 @@ footer {
         font-size: 1.8em;
     }
     .tagline {
-        font-size: 1.2em; /* <<< Disesuaikan */
-        text-align: center; /* <<< DIPASTIKAN */
+        font-size: 1.2em;
+        text-align: center; /* Dipastikan rata tengah */
     }
     .gradient-icon {
         font-size: 3.5em;
@@ -744,12 +746,11 @@ footer {
     .logo {
         font-size: 1.5em;
     }
-    /* Perkecil gambar logo di mobile */
     .logo img {
-        height: 35px; /* Sedikit lebih kecil */
+        height: 35px;
     }
     .logo span {
-        font-size: 1.3em; /* Perkecil teks logo */
+        font-size: 1.3em;
     }
 }
 
@@ -761,8 +762,8 @@ footer {
         font-size: 1.6em;
     }
     .tagline {
-        font-size: 1em; /* <<< Disesuaikan */
-        text-align: center; /* <<< DIPASTIKAN */
+        font-size: 1em;
+        text-align: center; /* Dipastikan rata tengah */
     }
     .card, .advantage-item, .gallery-item {
         padding: 25px;
@@ -776,18 +777,16 @@ footer {
     .target-list li {
         padding: 15px;
     }
-    /* Perkecil font logo lebih lanjut */
     .logo {
         font-size: 1.3em;
     }
     nav {
-        padding: 15px 15px; /* Padding lebih kecil lagi untuk layar sangat sempit */
+        padding: 15px 15px;
     }
-    /* Perkecil gambar logo di layar sangat sempit */
     .logo img {
-        height: 30px; /* Lebih kecil lagi */
+        height: 30px;
     }
     .logo span {
-        font-size: 1.2em; /* Lebih kecil lagi teks logo */
+        font-size: 1.2em;
     }
 }
