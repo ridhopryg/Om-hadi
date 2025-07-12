@@ -168,5 +168,12 @@
       <p>&copy; 2025 PT. Hadiani Trans Abadi. Hak Cipta Dilindungi.</p>
     </div>
   </footer>
+  <script>
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('menu-toggle').checked = false;
+    });
+  });
+  </script>
 </body>
 </html>
