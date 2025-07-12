@@ -138,7 +138,7 @@ nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%;
+    padding: 20px 50px; /* Padding horizontal menjadi px untuk konsistensi */
     z-index: 10;
     background: rgba(0, 0, 0, 0.1);
 }
@@ -149,7 +149,19 @@ nav {
     font-weight: 700;
     font-size: 1.8em;
     text-decoration: none;
-    padding-left: 30px;
+    white-space: nowrap; /* Mencegah logo pecah baris */
+}
+
+/* Tambahan styling untuk logo gambar di dalam .logo */
+.logo img {
+    height: 40px; /* Tinggi gambar logo */
+    border-radius: 5px; /* Border radius sesuai di HTML */
+    vertical-align: middle; /* Memastikan gambar sejajar dengan teks jika ada */
+}
+.logo span {
+    color: white; /* Pastikan teks logo berwarna putih */
+    font-weight: 700;
+    font-size: 1.5em; /* Ukuran font teks logo */
 }
 
 .nav-links {
@@ -197,6 +209,7 @@ nav {
     background: linear-gradient(to right, var(--accent-blue), var(--secondary-blue));
     box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
     border-radius: 30px;
+    color: var(--white); /* Pastikan tombol nav juga berwarna putih */
 }
 
 .nav-links .nav-btn:hover {
@@ -208,35 +221,36 @@ nav {
 
 /* Hamburger Menu (Hidden on Desktop) */
 #menu-toggle {
-    display: none;
+    display: none; /* Sembunyikan checkbox */
 }
 
 .hamburger-menu {
-    display: none;
+    display: none; /* Default: Sembunyikan hamburger di desktop */
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
     height: 20px;
     cursor: pointer;
-    z-index: 11;
+    z-index: 11; /* Pastikan di atas menu dan konten lain */
     position: relative;
-    padding-right: 30px;
 }
 
+/* Styling bar hamburger */
 .hamburger-menu .bar {
     width: 100%;
     height: 3px;
     background-color: var(--white);
     border-radius: 5px;
     transition: all 0.3s ease;
+    transform-origin: center;
 }
 
-/* Transform hamburger icon on click */
+/* Rotate and position bars for 'X' icon when checkbox is checked */
 #menu-toggle:checked + .hamburger-menu .bar:nth-child(1) {
     transform: translateY(8.5px) rotate(45deg);
 }
 #menu-toggle:checked + .hamburger-menu .bar:nth-child(2) {
-    opacity: 0;
+    opacity: 0; /* Sembunyikan bar tengah */
 }
 #menu-toggle:checked + .hamburger-menu .bar:nth-child(3) {
     transform: translateY(-8.5px) rotate(-45deg);
@@ -623,25 +637,33 @@ footer {
 @media (max-width: 992px) {
     /* Hide desktop nav links, show hamburger */
     .nav-links {
-        display: flex; /* Ubah dari none ke flex agar selalu di layout, lalu sembunyikan dengan max-height */
+        display: flex;
         flex-direction: column;
         width: 100%;
         position: absolute;
-        top: 100%; /* Position below nav bar */
+        top: 100%; /* Di bawah nav bar utama */
         left: 0;
-        background: var(--primary-blue); /* Background for mobile menu */
-        padding: 0; /* Ubah padding awal menjadi 0 */
+        background: var(--primary-blue); /* Background untuk menu mobile */
+        padding: 0;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        max-height: 0; /* Ini yang menyebabkan menu tertutup */
-        overflow: hidden;
-        transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Tambah padding di transisi */
+        max-height: 0; /* Default: Sembunyi dengan tinggi 0 */
+        overflow: hidden; /* Sembunyikan konten yang meluap */
+        transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out, opacity 0.5s ease-in-out;
         opacity: 0;
-        z-index: 9; /* Pastikan di bawah nav bar tapi di atas konten lain */
+        z-index: 9; /* Di bawah nav bar tapi di atas konten lain */
+    }
+
+    /* Tampilkan menu mobile ketika checkbox di-check */
+    #menu-toggle:checked ~ .nav-links {
+        max-height: 500px; /* Nilai yang cukup besar untuk menampung semua item menu */
+        padding-top: 20px;
+        padding-bottom: 20px;
+        opacity: 1;
     }
 
     .nav-links li {
-        margin: 0; /* Remove horizontal margin */
+        margin: 0; /* Hapus margin horizontal */
         width: 100%;
         text-align: center;
     }
@@ -657,27 +679,18 @@ footer {
         background-color: var(--secondary-blue);
     }
 
-    /* Remove underline on mobile hover */
     .nav-links li a::after {
-        display: none;
+        display: none; /* Hapus underline di mobile */
     }
 
     .nav-links .nav-btn {
-        margin: 20px auto; /* Center the button in mobile menu */
+        margin: 20px auto; /* Pusatkan tombol di menu mobile */
         display: block;
         width: fit-content;
     }
 
     .hamburger-menu {
-        display: flex; /* Show hamburger on smaller screens */
-    }
-
-    /* Show mobile menu when checkbox is checked */
-    #menu-toggle:checked ~ .nav-links {
-        max-height: 500px; /* Nilai yang cukup besar untuk menampung semua item menu */
-        padding-top: 20px; /* Tambahkan padding saat terbuka */
-        padding-bottom: 20px; /* Tambahkan padding saat terbuka */
-        opacity: 1;
+        display: flex; /* Tampilkan hamburger di layar kecil */
     }
 
     /* General responsive adjustments */
@@ -720,14 +733,17 @@ footer {
         font-size: 1em;
     }
     nav {
-        padding: 15px 5%;
+        padding: 15px 20px; /* Padding horizontal fixed ke 20px */
     }
     .logo {
         font-size: 1.5em;
-        padding-left: 0;
     }
-    .hamburger-menu {
-        padding-right: 0;
+    /* Perkecil gambar logo di mobile */
+    .logo img {
+        height: 35px; /* Sedikit lebih kecil */
+    }
+    .logo span {
+        font-size: 1.3em; /* Perkecil teks logo */
     }
 }
 
@@ -752,5 +768,19 @@ footer {
     }
     .target-list li {
         padding: 15px;
+    }
+    /* Perkecil font logo lebih lanjut */
+    .logo {
+        font-size: 1.3em;
+    }
+    nav {
+        padding: 15px 15px; /* Padding lebih kecil lagi untuk layar sangat sempit */
+    }
+    /* Perkecil gambar logo di layar sangat sempit */
+    .logo img {
+        height: 30px; /* Lebih kecil lagi */
+    }
+    .logo span {
+        font-size: 1.2em; /* Lebih kecil lagi teks logo */
     }
 }
