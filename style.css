@@ -19,7 +19,7 @@ body {
     line-height: 1.7;
     color: var(--text-color);
     background-color: var(--light-bg);
-    overflow-x: hidden; /* Prevent horizontal scroll from clip-path */
+    overflow-x: hidden;
 }
 
 .container {
@@ -111,7 +111,7 @@ ul li .fas {
 .delay-6 { animation-delay: 1.2s; }
 
 
-/* Header - (Hanya penambahan text-align pada .tagline, sudah diubah sebelumnya) */
+/* Header - (Tidak ada perubahan di sini) */
 header {
     background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue));
     color: var(--white);
@@ -127,19 +127,19 @@ header {
     font-weight: 400;
     margin-top: 15px;
     margin-bottom: 40px;
-    text-align: center; /* Dipastikan rata tengah */
+    text-align: center;
 }
 
-/* Navigasi - (Tidak ada perubahan di sini untuk default desktop) */
+/* Navigasi */
 nav {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-between; /* Penting untuk memisahkan logo dan hamburger */
     align-items: center;
-    padding: 20px 50px;
+    padding: 20px 50px; /* Padding default desktop */
     z-index: 10;
     background: rgba(0, 0, 0, 0.1);
 }
@@ -151,6 +151,7 @@ nav {
     font-size: 1.8em;
     text-decoration: none;
     white-space: nowrap;
+    /* margin-right: auto; Jika ingin mendorong hamburger ke kanan penuh di desktop */
 }
 
 .logo img {
@@ -219,13 +220,13 @@ nav {
 }
 
 
-/* Hamburger Menu (Hidden on Desktop) - (Tidak ada perubahan signifikan di sini) */
+/* Hamburger Menu (Hidden on Desktop) */
 #menu-toggle {
     display: none;
 }
 
 .hamburger-menu {
-    display: none;
+    display: none; /* Default: Sembunyikan hamburger di desktop */
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
@@ -233,6 +234,7 @@ nav {
     cursor: pointer;
     z-index: 11;
     position: relative;
+    /* margin-left: auto; Ini untuk desktop jika hamburger selalu ada, tapi kita tidak ingin itu */
 }
 
 .hamburger-menu .bar {
@@ -633,36 +635,49 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 992px) {
-    /* Hide desktop nav links, show hamburger */
+    /* Logo dan Hamburger tetap di baris yang sama, dengan padding yang disesuaikan */
+    nav {
+        padding: 15px 20px; /* Padding ini menentukan seberapa jauh dari tepi */
+        justify-content: space-between; /* Memastikan logo dan hamburger terpisah ke ujung */
+    }
+
+    .logo {
+        /* Tidak perlu perubahan khusus di sini karena justify-content: space-between */
+        /* Pastikan saja tidak ada margin-right: auto yang menimpa dari aturan lain */
+    }
+
+    .hamburger-menu {
+        display: flex; /* Tampilkan hamburger */
+        /* Tidak perlu perubahan posisi khusus karena justify-content: space-between */
+    }
+
+    /* Menu overlay yang muncul setelah hamburger diklik */
     .nav-links {
         display: flex;
         flex-direction: column;
-        /* Hapus width: 100%; karena position: absolute dan left/right 0 akan menangani lebar */
-        /* width: 100%; */ /* <<< DIHAPUS/DIKOMENTARI */
         position: absolute;
-        top: 100%;
+        top: 100%; /* Tetap di bawah nav bar utama */
         left: 0;
-        right: 0; /* <<< DITAMBAHKAN: Memastikan menu overlay memenuhi lebar */
+        right: 0; /* Penting agar menu overlay mengisi lebar penuh */
         background: var(--primary-blue);
         padding: 0;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         max-height: 0;
-        overflow-y: hidden; /* <<< DIRUBAH: Gunakan overflow-y, bukan overflow, dan set hidden secara default */
-        overflow-x: hidden; /* Tambahkan ini untuk mencegah scrollbar horizontal di menu itu sendiri */
+        overflow-y: hidden;
+        overflow-x: hidden;
         transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out, opacity 0.5s ease-in-out;
         opacity: 0;
         z-index: 9;
     }
 
-    /* Tampilkan menu mobile ketika checkbox di-check */
     #menu-toggle:checked ~ .nav-links {
-        max-height: 700px; /* Nilai ini mungkin perlu disesuaikan berdasarkan jumlah item menu Anda */
+        max-height: 700px;
         padding-top: 20px;
         padding-bottom: 20px;
         opacity: 1;
-        overflow-y: auto; /* <<< DIRUBAH: Jika menu terlalu panjang, scrollbar vertikal muncul otomatis */
-        -webkit-overflow-scrolling: touch; /* Untuk scrolling yang lebih mulus di iOS */
+        overflow-y: auto;
+        -webkit-overflow-scrolling: touch;
     }
 
     .nav-links li {
@@ -673,7 +688,7 @@ footer {
 
     .nav-links li a {
         display: block;
-        padding: 15px 20px; /* Padding ini penting untuk ruang teks */
+        padding: 15px 20px;
         color: var(--white);
         border-bottom: 1px solid rgba(255, 255, 255, 0.05);
     }
@@ -689,11 +704,7 @@ footer {
     .nav-links .nav-btn {
         margin: 20px auto;
         display: block;
-        width: fit-content; /* Untuk memastikan tombol tidak terlalu lebar */
-    }
-
-    .hamburger-menu {
-        display: flex;
+        width: fit-content;
     }
 
     /* General responsive adjustments */
@@ -705,7 +716,7 @@ footer {
     }
     .tagline {
         font-size: 1.5em;
-        text-align: center; /* Dipastikan rata tengah */
+        text-align: center;
     }
     .card-container, .advantage-grid, .gallery {
         gap: 30px;
@@ -728,7 +739,7 @@ footer {
     }
     .tagline {
         font-size: 1.2em;
-        text-align: center; /* Dipastikan rata tengah */
+        text-align: center;
     }
     .gradient-icon {
         font-size: 3.5em;
@@ -741,7 +752,7 @@ footer {
         font-size: 1em;
     }
     nav {
-        padding: 15px 20px; /* Padding horizontal fixed ke 20px */
+        padding: 15px 20px; /* Padding ini mengatur jarak dari tepi kiri/kanan layar */
     }
     .logo {
         font-size: 1.5em;
@@ -763,7 +774,7 @@ footer {
     }
     .tagline {
         font-size: 1em;
-        text-align: center; /* Dipastikan rata tengah */
+        text-align: center;
     }
     .card, .advantage-item, .gallery-item {
         padding: 25px;
@@ -781,7 +792,7 @@ footer {
         font-size: 1.3em;
     }
     nav {
-        padding: 15px 15px;
+        padding: 15px 15px; /* Padding lebih kecil lagi untuk layar sangat sempit */
     }
     .logo img {
         height: 30px;
