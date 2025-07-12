@@ -137,11 +137,12 @@ nav {
     left: 0;
     width: 100%;
     display: flex;
-    justify-content: space-between; /* Penting untuk memisahkan logo dan hamburger */
+    justify-content: space-between;
     align-items: center;
     padding: 20px 50px; /* Padding default desktop */
     z-index: 10;
     background: rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Tambahkan ini untuk memastikan padding dihitung ke dalam width */
 }
 
 .logo {
@@ -234,7 +235,9 @@ nav {
     cursor: pointer;
     z-index: 11;
     position: relative;
-    /* margin-left: auto; Ini untuk desktop jika hamburger selalu ada, tapi kita tidak ingin itu */
+    /* Tambahkan sedikit padding agar ikon X tidak terlalu mepet ke ujung saat terbuka */
+    padding: 5px; /* Memberikan ruang ekstra di sekitar ikon */
+    box-sizing: content-box; /* Pastikan padding tidak mengurangi ukuran width/height */
 }
 
 .hamburger-menu .bar {
@@ -246,6 +249,7 @@ nav {
     transform-origin: center;
 }
 
+/* Rotate and position bars for 'X' icon when checkbox is checked */
 #menu-toggle:checked + .hamburger-menu .bar:nth-child(1) {
     transform: translateY(8.5px) rotate(45deg);
 }
@@ -635,45 +639,92 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 992px) {
-    /* Logo dan Hamburger tetap di baris yang sama, dengan padding yang disesuaikan */
     nav {
-        padding: 15px 20px; /* Padding ini menentukan seberapa jauh dari tepi */
-        justify-content: space-between; /* Memastikan logo dan hamburger terpisah ke ujung */
+        position: fixed; /* Agar tetap di atas saat di-scroll */
+        top: 0;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 20px; /* Padding atas, bawah, kiri, kanan */
+        z-index: 1000; /* Pastikan di atas elemen lain */
+        background: rgba(0, 0, 0, 0.1); /* Atau warna background header Anda */
+        box-sizing: border-box;
     }
 
     .logo {
-        /* Tidak perlu perubahan khusus di sini karena justify-content: space-between */
-        /* Pastikan saja tidak ada margin-right: auto yang menimpa dari aturan lain */
+        color: var(--white);
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 1.5em; /* Sesuaikan ukuran font logo jika perlu */
+        text-decoration: none;
+        white-space: nowrap;
+    }
+
+    .logo img {
+        height: 30px; /* Sesuaikan ukuran gambar logo jika perlu */
+        border-radius: 5px;
+        vertical-align: middle;
+        margin-right: 5px; /* Berikan sedikit jarak antara gambar dan teks logo */
+    }
+
+    .logo span {
+        color: white;
+        font-weight: 700;
+        font-size: 1.2em; /* Sesuaikan ukuran font teks logo jika perlu */
     }
 
     .hamburger-menu {
-        display: flex; /* Tampilkan hamburger */
-        /* Tidak perlu perubahan posisi khusus karena justify-content: space-between */
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 30px;
+        height: 20px;
+        cursor: pointer;
+        z-index: 1001; /* Pastikan di atas menu overlay */
     }
 
-    /* Menu overlay yang muncul setelah hamburger diklik */
+    .hamburger-menu .bar {
+        width: 100%;
+        height: 3px;
+        background-color: var(--white);
+        border-radius: 5px;
+        transition: all 0.3s ease;
+        transform-origin: center;
+    }
+
+    #menu-toggle:checked + .hamburger-menu .bar:nth-child(1) {
+        transform: translateY(8.5px) rotate(45deg);
+    }
+    #menu-toggle:checked + .hamburger-menu .bar:nth-child(2) {
+        opacity: 0;
+    }
+    #menu-toggle:checked + .hamburger-menu .bar:nth-child(3) {
+        transform: translateY(-8.5px) rotate(-45deg);
+    }
+
     .nav-links {
         display: flex;
         flex-direction: column;
         position: absolute;
-        top: 100%; /* Tetap di bawah nav bar utama */
+        top: 60px; /* Sesuaikan dengan tinggi navbar Anda */
         left: 0;
-        right: 0; /* Penting agar menu overlay mengisi lebar penuh */
+        right: 0;
         background: var(--primary-blue);
         padding: 0;
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         max-height: 0;
-        overflow-y: hidden;
-        overflow-x: hidden;
+        overflow: hidden;
         transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out, opacity 0.5s ease-in-out;
         opacity: 0;
-        z-index: 9;
+        z-index: 999; /* Pastikan di bawah hamburger-menu tapi di atas konten */
     }
 
     #menu-toggle:checked ~ .nav-links {
-        max-height: 700px;
-        padding-top: 20px;
+        max-height: 700px; /* Nilai yang cukup besar untuk menampung semua item */
+        padding-top: 20px; /* Berikan ruang di bawah header yang tetap */
         padding-bottom: 20px;
         opacity: 1;
         overflow-y: auto;
@@ -752,7 +803,7 @@ footer {
         font-size: 1em;
     }
     nav {
-        padding: 15px 20px; /* Padding ini mengatur jarak dari tepi kiri/kanan layar */
+        padding: 15px 20px;
     }
     .logo {
         font-size: 1.5em;
@@ -792,7 +843,7 @@ footer {
         font-size: 1.3em;
     }
     nav {
-        padding: 15px 15px; /* Padding lebih kecil lagi untuk layar sangat sempit */
+        padding: 15px 15px;
     }
     .logo img {
         height: 30px;
