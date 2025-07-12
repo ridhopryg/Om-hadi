@@ -127,6 +127,7 @@ header {
     font-weight: 400;
     margin-top: 15px;
     margin-bottom: 40px; /* Jarak bawah tagline ke tombol */
+    text-align: center; /* <<< DITAMBAHKAN/DIPASTIKAN */
 }
 
 /* Navigasi */
@@ -656,7 +657,7 @@ footer {
 
     /* Tampilkan menu mobile ketika checkbox di-check */
     #menu-toggle:checked ~ .nav-links {
-        max-height: 500px; /* Nilai yang cukup besar untuk menampung semua item menu */
+        max-height: 700px; /* <<< DIRUBAH: Ditingkatkan untuk menghindari pemotongan */
         padding-top: 20px;
         padding-bottom: 20px;
         opacity: 1;
@@ -700,6 +701,10 @@ footer {
     h2 {
         font-size: 2.2em;
     }
+    .tagline {
+        font-size: 1.5em; /* Tetap sama seperti di luar media query */
+        text-align: center; /* <<< DIPASTIKAN */
+    }
     .card-container, .advantage-grid, .gallery {
         gap: 30px;
     }
@@ -720,7 +725,8 @@ footer {
         font-size: 1.8em;
     }
     .tagline {
-        font-size: 1.2em;
+        font-size: 1.2em; /* <<< Disesuaikan */
+        text-align: center; /* <<< DIPASTIKAN */
     }
     .gradient-icon {
         font-size: 3.5em;
@@ -755,7 +761,8 @@ footer {
         font-size: 1.6em;
     }
     .tagline {
-        font-size: 1em;
+        font-size: 1em; /* <<< Disesuaikan */
+        text-align: center; /* <<< DIPASTIKAN */
     }
     .card, .advantage-item, .gallery-item {
         padding: 25px;
