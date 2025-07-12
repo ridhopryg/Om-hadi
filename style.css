@@ -115,7 +115,7 @@ ul li .fas {
 header {
     background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue)); /* Gradient background */
     color: var(--white);
-    padding: 80px 0 100px 0; /* Mengurangi padding bawah sedikit */
+    padding: 80px 0 150px 0; /* Adjusted padding-bottom as wave is removed */
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -126,22 +126,8 @@ header {
     color: #CCE0FF;
     font-weight: 400;
     margin-top: 15px;
-    margin-bottom: 40px; /* Menambah margin bawah untuk tombol */
+    margin-bottom: 40px; /* Jarak bawah tagline ke tombol */
 }
-
-.header-wave {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100px;
-    background-color: var(--light-bg); /* Warna ini harus sama dengan background body/about section */
-    transform: skewY(-2deg);
-    transform-origin: bottom right;
-    z-index: 1;
-    margin-bottom: -1px; /* Mengatasi celah 1px yang kadang muncul */
-}
-
 
 /* Navigation */
 nav {
@@ -326,7 +312,7 @@ nav {
 
 .about-section {
     background-color: var(--light-bg); /* Light background for about */
-    margin-top: -80px; /* Menambah overlap agar menutupi bagian bawah gelombang */
+    margin-top: 0; /* Removed negative margin as wave is gone */
     border-radius: 10px 10px 0 0; /* Rounded top, flat bottom */
     box-shadow: 0 -5px 20px rgba(0,0,0,0.05); /* Shadow for overlap */
 }
@@ -722,9 +708,6 @@ footer {
     }
     .gradient-icon {
         font-size: 3.5em;
-    }
-    .header-wave {
-        height: 70px;
     }
     section {
         padding: 60px 0;
