@@ -115,7 +115,7 @@ ul li .fas {
 header {
     background: linear-gradient(to right, var(--primary-blue), var(--secondary-blue)); /* Gradient background */
     color: var(--white);
-    padding: 80px 0 120px 0; /* More padding top/bottom */
+    padding: 80px 0 100px 0; /* Mengurangi padding bawah sedikit */
     text-align: center;
     position: relative;
     overflow: hidden;
@@ -126,7 +126,7 @@ header {
     color: #CCE0FF;
     font-weight: 400;
     margin-top: 15px;
-    margin-bottom: 30px; /* Add space below tagline for button */
+    margin-bottom: 40px; /* Menambah margin bawah untuk tombol */
 }
 
 .header-wave {
@@ -134,11 +134,126 @@ header {
     bottom: 0;
     left: 0;
     width: 100%;
-    height: 100px; /* Adjust height for wave effect */
-    background-color: var(--light-bg); /* Match body background */
-    transform: skewY(-2deg); /* Angled bottom */
+    height: 100px;
+    background-color: var(--light-bg); /* Warna ini harus sama dengan background body/about section */
+    transform: skewY(-2deg);
     transform-origin: bottom right;
     z-index: 1;
+    margin-bottom: -1px; /* Mengatasi celah 1px yang kadang muncul */
+}
+
+
+/* Navigation */
+nav {
+    position: absolute; /* Ubah ke absolute atau fixed jika ingin sticky header */
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 5%; /* Padding di samping untuk kontainer nav */
+    z-index: 10; /* Pastikan nav di atas elemen lain */
+    background: rgba(0, 0, 0, 0.1); /* Sedikit transparan */
+}
+
+.logo {
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-size: 1.8em;
+    text-decoration: none;
+    padding-left: 30px; /* Sesuaikan agar tidak terlalu pinggir */
+}
+
+.nav-links {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex; /* Untuk desktop: link berjejer */
+    align-items: center;
+}
+
+.nav-links li {
+    margin-left: 30px; /* Jarak antar link */
+    padding-left: 0; /* Hilangkan padding bawaan li */
+}
+
+.nav-links li a {
+    color: var(--white);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1em;
+    padding: 8px 0;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-links li a::after { /* Underline effect on hover */
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-blue);
+    transition: width 0.3s ease;
+}
+
+.nav-links li a:hover::after {
+    width: 100%;
+}
+
+.nav-links .nav-btn {
+    margin-left: 30px; /* Jarak khusus untuk tombol di nav */
+    padding: 10px 20px;
+    font-size: 0.95em;
+    background: linear-gradient(to right, var(--accent-blue), var(--secondary-blue));
+    box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
+    border-radius: 30px; /* Lebih kecil dari tombol utama */
+}
+
+.nav-links .nav-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(74, 144, 226, 0.4);
+    background: linear-gradient(to right, var(--accent-gradient-end), var(--accent-gradient-start));
+}
+
+
+/* Hamburger Menu (Hidden on Desktop) */
+#menu-toggle {
+    display: none; /* Hide the checkbox */
+}
+
+.hamburger-menu {
+    display: none; /* Hidden by default, shown in media query */
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 20px;
+    cursor: pointer;
+    z-index: 11; /* Make sure it's above everything */
+    position: relative;
+    padding-right: 30px; /* Sesuaikan agar tidak terlalu pinggir */
+}
+
+.hamburger-menu .bar {
+    width: 100%;
+    height: 3px;
+    background-color: var(--white);
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+/* Transform hamburger icon on click */
+#menu-toggle:checked + .hamburger-menu .bar:nth-child(1) {
+    transform: translateY(8.5px) rotate(45deg);
+}
+#menu-toggle:checked + .hamburger-menu .bar:nth-child(2) {
+    opacity: 0;
+}
+#menu-toggle:checked + .hamburger-menu .bar:nth-child(3) {
+    transform: translateY(-8.5px) rotate(-45deg);
 }
 
 
@@ -211,7 +326,7 @@ header {
 
 .about-section {
     background-color: var(--light-bg); /* Light background for about */
-    margin-top: -60px; /* Overlap with header wave */
+    margin-top: -80px; /* Menambah overlap agar menutupi bagian bawah gelombang */
     border-radius: 10px 10px 0 0; /* Rounded top, flat bottom */
     box-shadow: 0 -5px 20px rgba(0,0,0,0.05); /* Shadow for overlap */
 }
@@ -520,6 +635,63 @@ footer {
 
 /* Responsive Design */
 @media (max-width: 992px) {
+    /* Hide desktop nav links, show hamburger */
+    .nav-links {
+        display: none; /* Hide by default on smaller screens */
+        flex-direction: column;
+        width: 100%;
+        position: absolute;
+        top: 100%; /* Position below nav bar */
+        left: 0;
+        background: var(--primary-blue); /* Background for mobile menu */
+        padding: 20px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        max-height: 0; /* For scroll down/up effect */
+        overflow: hidden;
+        transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        opacity: 0;
+    }
+
+    .nav-links li {
+        margin: 0; /* Remove horizontal margin */
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links li a {
+        display: block;
+        padding: 15px 20px;
+        color: var(--white);
+        border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    .nav-links li a:hover {
+        background-color: var(--secondary-blue);
+    }
+
+    /* Remove underline on mobile hover */
+    .nav-links li a::after {
+        display: none;
+    }
+
+    .nav-links .nav-btn {
+        margin: 20px auto; /* Center the button in mobile menu */
+        display: block;
+        width: fit-content;
+    }
+
+    .hamburger-menu {
+        display: flex; /* Show hamburger on smaller screens */
+    }
+
+    /* Show mobile menu when checkbox is checked */
+    #menu-toggle:checked ~ .nav-links {
+        max-height: 500px; /* Enough to show all links */
+        opacity: 1;
+    }
+
+    /* General responsive adjustments */
     h1 {
         font-size: 3em;
     }
@@ -560,6 +732,16 @@ footer {
     .btn {
         padding: 12px 25px;
         font-size: 1em;
+    }
+    nav {
+        padding: 15px 5%; /* Adjusted padding for nav on smaller screens */
+    }
+    .logo {
+        font-size: 1.5em;
+        padding-left: 0; /* Remove padding for logo on mobile */
+    }
+    .hamburger-menu {
+        padding-right: 0; /* Remove padding for hamburger on mobile */
     }
 }
 
