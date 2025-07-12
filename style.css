@@ -129,18 +129,18 @@ header {
     margin-bottom: 40px; /* Jarak bawah tagline ke tombol */
 }
 
-/* Navigation */
+/* Navigasi */
 nav {
-    position: absolute; /* Ubah ke absolute atau fixed jika ingin sticky header */
+    position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 20px 5%; /* Padding di samping untuk kontainer nav */
-    z-index: 10; /* Pastikan nav di atas elemen lain */
-    background: rgba(0, 0, 0, 0.1); /* Sedikit transparan */
+    padding: 20px 5%;
+    z-index: 10;
+    background: rgba(0, 0, 0, 0.1);
 }
 
 .logo {
@@ -149,20 +149,20 @@ nav {
     font-weight: 700;
     font-size: 1.8em;
     text-decoration: none;
-    padding-left: 30px; /* Sesuaikan agar tidak terlalu pinggir */
+    padding-left: 30px;
 }
 
 .nav-links {
     list-style: none;
     margin: 0;
     padding: 0;
-    display: flex; /* Untuk desktop: link berjejer */
+    display: flex;
     align-items: center;
 }
 
 .nav-links li {
-    margin-left: 30px; /* Jarak antar link */
-    padding-left: 0; /* Hilangkan padding bawaan li */
+    margin-left: 30px;
+    padding-left: 0;
 }
 
 .nav-links li a {
@@ -175,7 +175,7 @@ nav {
     transition: color 0.3s ease;
 }
 
-.nav-links li a::after { /* Underline effect on hover */
+.nav-links li a::after {
     content: '';
     position: absolute;
     left: 0;
@@ -191,12 +191,12 @@ nav {
 }
 
 .nav-links .nav-btn {
-    margin-left: 30px; /* Jarak khusus untuk tombol di nav */
+    margin-left: 30px;
     padding: 10px 20px;
     font-size: 0.95em;
     background: linear-gradient(to right, var(--accent-blue), var(--secondary-blue));
     box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
-    border-radius: 30px; /* Lebih kecil dari tombol utama */
+    border-radius: 30px;
 }
 
 .nav-links .nav-btn:hover {
@@ -208,19 +208,19 @@ nav {
 
 /* Hamburger Menu (Hidden on Desktop) */
 #menu-toggle {
-    display: none; /* Hide the checkbox */
+    display: none;
 }
 
 .hamburger-menu {
-    display: none; /* Hidden by default, shown in media query */
+    display: none;
     flex-direction: column;
     justify-content: space-between;
     width: 30px;
     height: 20px;
     cursor: pointer;
-    z-index: 11; /* Make sure it's above everything */
+    z-index: 11;
     position: relative;
-    padding-right: 30px; /* Sesuaikan agar tidak terlalu pinggir */
+    padding-right: 30px;
 }
 
 .hamburger-menu .bar {
@@ -245,10 +245,10 @@ nav {
 
 /* Buttons */
 .btn {
-    display: inline-flex; /* Allows icon and text alignment */
+    display: inline-flex;
     align-items: center;
     padding: 15px 30px;
-    border-radius: 50px; /* Pill shape */
+    border-radius: 50px;
     text-decoration: none;
     font-family: 'Poppins', sans-serif;
     font-weight: 600;
@@ -273,13 +273,13 @@ nav {
 .primary-btn {
     background: linear-gradient(to right, var(--accent-gradient-start), var(--accent-gradient-end));
     color: var(--white);
-    box-shadow: 0 8px 20px rgba(74, 144, 226, 0.3); /* Shadow based on accent blue */
+    box-shadow: 0 8px 20px rgba(74, 144, 226, 0.3);
 }
 
 .primary-btn:hover {
     transform: translateY(-5px);
     box-shadow: 0 12px 25px rgba(74, 144, 226, 0.4);
-    background: linear-gradient(to right, var(--accent-gradient-end), var(--accent-gradient-start)); /* Invert gradient on hover */
+    background: linear-gradient(to right, var(--accent-gradient-end), var(--accent-gradient-start));
 }
 
 .secondary-btn {
@@ -296,25 +296,25 @@ nav {
 
 .button-center {
     text-align: center;
-    margin-top: 50px; /* Space above button */
+    margin-top: 50px;
 }
 
 
 /* Section Styling */
 .section-content {
     position: relative;
-    background-color: var(--white); /* Default white background */
-    padding: 80px 0; /* Consistent padding */
-    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05); /* Subtle section shadow */
-    margin-bottom: 40px; /* Space between sections */
-    border-radius: 10px; /* Slight roundness */
+    background-color: var(--white);
+    padding: 80px 0;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+    margin-bottom: 40px;
+    border-radius: 10px;
 }
 
 .about-section {
-    background-color: var(--light-bg); /* Light background for about */
+    background-color: var(--light-bg);
     margin-top: 0; /* Removed negative margin as wave is gone */
-    border-radius: 10px 10px 0 0; /* Rounded top, flat bottom */
-    box-shadow: 0 -5px 20px rgba(0,0,0,0.05); /* Shadow for overlap */
+    border-radius: 10px 10px 0 0;
+    box-shadow: 0 -5px 20px rgba(0,0,0,0.05);
 }
 
 .vision-mission-section {
@@ -335,8 +335,8 @@ nav {
 
 .targets-section {
     background-color: var(--white);
-    margin-bottom: 0; /* No margin bottom for last section */
-    border-radius: 0 0 10px 10px; /* Rounded bottom, flat top */
+    margin-bottom: 0;
+    border-radius: 0 0 10px 10px;
 }
 
 
@@ -347,13 +347,13 @@ nav {
 }
 
 .gradient-icon {
-    font-size: 4.5em; /* Larger icons */
+    font-size: 4.5em;
     display: block;
     margin-bottom: 20px;
     background: linear-gradient(to right, var(--accent-gradient-start), var(--accent-gradient-end));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
-    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1)); /* Icon shadow */
+    filter: drop-shadow(0 5px 10px rgba(0, 0, 0, 0.1));
 }
 
 
@@ -370,7 +370,7 @@ nav {
     background-color: var(--white);
     border-radius: 15px;
     box-shadow: var(--card-shadow);
-    padding: 40px; /* More padding */
+    padding: 40px;
     flex: 1;
     min-width: 320px;
     max-width: 48%;
@@ -380,7 +380,7 @@ nav {
     overflow: hidden;
 }
 
-.card::before { /* Decorative overlay/border on hover */
+.card::before {
     content: '';
     position: absolute;
     top: 0;
@@ -400,7 +400,7 @@ nav {
 }
 
 .card:hover::before {
-    opacity: 0.1; /* Subtle gradient overlay on hover */
+    opacity: 0.1;
 }
 
 .card h3 {
@@ -442,7 +442,7 @@ nav {
 
 .gallery-item img {
     width: 100%;
-    height: 250px; /* Consistent height for images */
+    height: 250px;
     object-fit: cover;
     display: block;
     transition: transform 0.4s ease-in-out;
@@ -459,8 +459,8 @@ nav {
     top: 0;
     left: 0;
     width: 100%;
-    height: calc(100% - 60px); /* Adjust height to exclude caption */
-    background: rgba(var(--primary-blue), 0.85); /* Darker, more opaque overlay */
+    height: calc(100% - 60px);
+    background: rgba(var(--primary-blue), 0.85);
     color: var(--white);
     display: flex;
     justify-content: center;
@@ -525,7 +525,7 @@ nav {
     overflow: hidden;
 }
 
-.advantage-item::before { /* Similar decorative overlay */
+.advantage-item::before {
     content: '';
     position: absolute;
     top: 0;
@@ -549,7 +549,7 @@ nav {
 }
 
 .advantage-item .fas {
-    font-size: 3.5em; /* Larger icons */
+    font-size: 3.5em;
     color: var(--primary-blue);
     margin-bottom: 20px;
     display: block;
@@ -584,20 +584,20 @@ nav {
     background-color: var(--light-bg);
     padding: 40px;
     border-radius: 15px;
-    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.08); /* More pronounced inset shadow */
+    box-shadow: inset 0 0 15px rgba(0, 0, 0, 0.08);
 }
 
 .target-list li {
     background-color: var(--white);
     padding: 20px 25px;
-    border-left: 6px solid var(--accent-blue); /* Thicker accent border */
+    border-left: 6px solid var(--accent-blue);
     border-radius: 8px;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
 
 .target-list li:hover {
-    background-color: #F0F5FF; /* Slight background change on hover */
+    background-color: #F0F5FF;
     transform: translateX(5px);
 }
 
@@ -616,27 +616,28 @@ footer {
     padding: 30px 0;
     font-size: 0.95em;
     box-shadow: 0 -5px 15px rgba(0, 0, 0, 0.25);
-    margin-top: 60px; /* Space from last section */
+    margin-top: 60px;
 }
 
 /* Responsive Design */
 @media (max-width: 992px) {
     /* Hide desktop nav links, show hamburger */
     .nav-links {
-        display: none; /* Hide by default on smaller screens */
+        display: flex; /* Ubah dari none ke flex agar selalu di layout, lalu sembunyikan dengan max-height */
         flex-direction: column;
         width: 100%;
         position: absolute;
         top: 100%; /* Position below nav bar */
         left: 0;
         background: var(--primary-blue); /* Background for mobile menu */
-        padding: 20px 0;
+        padding: 0; /* Ubah padding awal menjadi 0 */
         border-top: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        max-height: 0; /* For scroll down/up effect */
+        max-height: 0; /* Ini yang menyebabkan menu tertutup */
         overflow: hidden;
-        transition: max-height 0.5s ease-in-out, opacity 0.5s ease-in-out;
+        transition: max-height 0.5s ease-in-out, padding 0.5s ease-in-out, opacity 0.5s ease-in-out; /* Tambah padding di transisi */
         opacity: 0;
+        z-index: 9; /* Pastikan di bawah nav bar tapi di atas konten lain */
     }
 
     .nav-links li {
@@ -673,7 +674,9 @@ footer {
 
     /* Show mobile menu when checkbox is checked */
     #menu-toggle:checked ~ .nav-links {
-        max-height: 500px; /* Enough to show all links */
+        max-height: 500px; /* Nilai yang cukup besar untuk menampung semua item menu */
+        padding-top: 20px; /* Tambahkan padding saat terbuka */
+        padding-bottom: 20px; /* Tambahkan padding saat terbuka */
         opacity: 1;
     }
 
@@ -717,14 +720,14 @@ footer {
         font-size: 1em;
     }
     nav {
-        padding: 15px 5%; /* Adjusted padding for nav on smaller screens */
+        padding: 15px 5%;
     }
     .logo {
         font-size: 1.5em;
-        padding-left: 0; /* Remove padding for logo on mobile */
+        padding-left: 0;
     }
     .hamburger-menu {
-        padding-right: 0; /* Remove padding for hamburger on mobile */
+        padding-right: 0;
     }
 }
 
